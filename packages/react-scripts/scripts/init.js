@@ -288,6 +288,7 @@ module.exports = function(
 
   console.log();
   console.log(`Success! Created ${appName} at ${appPath}`);
+  console.log('Hello, and welcome to smilebots customised create react app');
   console.log('harshitIsGod');
   console.log('Inside that directory, you can run several commands:');
   console.log();

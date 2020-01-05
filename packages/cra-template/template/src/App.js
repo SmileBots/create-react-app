@@ -1,26 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './smilebots.png';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+class App extends Component {
+
+  getEnvValues() {
+    if (!process.env.CODERNAME || !process.env.PROJECTNAME) {
+      throw new Error('Please define `CODERNAME` and `PROJECTNAME` in your .env file');
+    }
+
+    const coderName = process.env.CODERNAME
+    const projectName = process.env.PROJECTNAME;
+
+    return { coderName, projectName };
+  }
+
+  render() {
+
+    const { coderName, projectName } = this.getEnvValues();
+
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to SmileBots</h2>
+        </div>
+        <p className="App-intro">
+           <b> Your Name: { coderName } </b><br/><br/>
+           <b> Project Name: { projectName } </b>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
