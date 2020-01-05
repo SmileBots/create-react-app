@@ -4,20 +4,20 @@ import './App.css';
 
 class App extends Component {
 
-  getEnvValues() {
-    if (!process.env.CODERNAME || !process.env.PROJECTNAME) {
-      throw new Error('Please define `CODERNAME` and `PROJECTNAME` in your .env file');
-    }
+  // getEnvValues() {
+  //   if (!process.env.CODERNAME || !process.env.PROJECTNAME) {
+  //     throw new Error('Please define `CODERNAME` and `PROJECTNAME` in your .env file');
+  //   }
 
-    const coderName = process.env.CODERNAME
-    const projectName = process.env.PROJECTNAME;
+  //   const coderName = process.env.CODERNAME
+  //   const projectName = process.env.PROJECTNAME;
 
-    return { coderName, projectName };
-  }
+  //   return { coderName, projectName };
+  // }
 
   render() {
 
-    const { coderName, projectName } = this.getEnvValues();
+    // const { coderName, projectName } = this.getEnvValues();
 
     return (
       <div className="App">
@@ -26,8 +26,9 @@ class App extends Component {
           <h2>Welcome to SmileBots</h2>
         </div>
         <p className="App-intro">
-           <b> Your Name: { coderName } </b><br/><br/>
-           <b> Project Name: { projectName } </b>
+           App Intro here
+           {/* <b> Your Name: { coderName } </b><br/><br/>
+           <b> Project Name: { projectName } </b> */}
         </p>
       </div>
     );
